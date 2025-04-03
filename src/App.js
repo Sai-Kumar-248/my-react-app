@@ -3,8 +3,10 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [users, setUsers] = useState([]);
 
+  const API_URL = "https://web-production-052ff.up.railway.app/users";
+
   useEffect(() => {
-    fetch("http://localhost:8080/users")
+    fetch(API_URL)
       .then((response) => response.json())
       .then((data) => setUsers(data));
   }, []);
